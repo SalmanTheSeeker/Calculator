@@ -12,6 +12,38 @@
     width: max-content;
     background-color: black;
     color: white;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-top: 20px;
+}
+
+.results-container{
+
+    text-align: right;
+}
+#values{
+
+    font-size: 30px;
+    margin-top: 10px;
+   
+}
+
+#results{
+
+    font-size: 60px;
+    margin-top: 30px;
+    
+
+}
+
+.text-fields{
+
+    overflow:hidden;
+}
+
+.btns-table{
+
+    border-spacing: 15px;
 }
 
 .btns{
@@ -22,22 +54,41 @@
     font-weight: bold;
     font-size: 40px;
     text-align: center;
-    border-radius: 50%;
+    transition: scale .3s;
+    border-radius:50%; 
+    /* border: 5px solid black; */
+    /* box-shadow: 1px 1px 8px #ffffff; */
+    box-shadow: inset;
     
 }
 
+.btns-click{
+    scale: .90;
+}
+
+.btns:hover{
+
+    cursor: pointer;
+    scale: 1.05;
+}
+
 .btns-white{
-    background-color: #A5A5A5;
+    background-color: #d4d4d4;
     color: rgb(63, 63, 63); 
+    font-weight: bold;
+    font-size: 30px;
 }
 
 
 .btns-orange{
     background-color: #FE9505;
     color: rgb(63, 63, 63); 
+    font-weight: bold;
+    font-size: 40px;
+    color: #d4d4d4;
 }
 
-#btn-0{
+.btn-0{
 
     border-radius: 2.5rem;
 }
