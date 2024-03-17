@@ -1,0 +1,43 @@
+*{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+
+.container{
+    margin: auto;
+    width: max-content;
+    background-color: black;
+    color: white;
+}
+
+.btns{
+    background-color: #333333;
+    width: 5rem;
+    height: 5rem;
+    color: white;
+    font-weight: bold;
+    font-size: 40px;
+    text-align: center;
+    border-radius: 50%;
+    
+}
+
+.btns-white{
+    background-color: #A5A5A5;
+    color: rgb(63, 63, 63); 
+}
+
+
+.btns-orange{
+    background-color: #FE9505;
+    color: rgb(63, 63, 63); 
+}
+
+#btn-0{
+
+    border-radius: 2.5rem;
+}
