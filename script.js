@@ -1,6 +1,12 @@
 const buttons = document.querySelectorAll(".btns");
-let result = document.getElementById("results-p");
-let value = document.getElementById("values-p");
+let resultText = document.getElementById("results-p");
+let valueText = document.getElementById("values-p");
+
+let result = 0
+let value = null
+let value2 = 0
+
+let operation = ""
 
 buttons.forEach(function(button) {
 
@@ -8,41 +14,125 @@ button.addEventListener("click", function() {
 
     let classes = button.classList;
 
-    console.log(classes.contains('btns-white'));
+    // console.log(button.id);
 
-    result.innerText = button.classList;
 
     if(classes.contains("btns-white")){
+
+        console.log('white');
 
         switch (button.id) {
             case "ac":
 
-             value.innerText = " "
+             result = 0
+             value = null
+             valueText.innerText = ""
+             resultText.innerText = "0"
+             operation = "";
                 
             break;
 
             case "cl":
 
-             result.innerText = "+/-"
-           
+            
             break;
 
             case "prce":
 
-             result.innerText = "%"
-      
+             
            break;
         }
 
     }else if(classes.contains("btns-orange")){
 
-        result.innerText = "orange"
+        console.log('orange');
+
+       switch (button.id) {
+        case "eql":
+
+            resultText.innerText = opt(operation)
+
+            break;
+       
+        default:
+
+            value2 = parseInt(value)
+            value = null
+            operation = button.id
+
+            valueText.innerText += getSigns(operation)
+
+            console.log(getSigns(operation));
+
+            break;
+       }
 
     }else{
 
-        value.innerText += button.innerText
+        console.log('black')
+
+        if(value == null){
+
+            value = button.innerText
+
+        }else{
+
+            value += button.innerText
+        }
+         
+         valueText.innerText += button.id
+
 
     }
 
   });
 });
+
+
+function opt(opt){
+
+    value = parseInt(value)
+    switch (opt) {
+        case "dvi":
+            return value2 / value
+        break;
+
+        case "mlti":
+            return value2 * value
+        break;
+
+        case "min":
+            return value2 - value
+        break;
+
+        case "pls":
+            return value2 + value
+        break;    
+        
+    }
+
+}
+
+function getSigns(opt){
+    switch (opt) {
+        case "dvi":
+            return "÷"
+        break;
+
+        case "mlti":
+            return "x"
+        break;
+
+        case "min":
+            return "-"
+        break;
+
+        case "pls":
+            return "+"
+        break;    
+        
+    }
+
+}
+
+

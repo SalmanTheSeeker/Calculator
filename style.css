@@ -15,6 +15,7 @@
     padding: 1rem;
     border-radius: 1rem;
     margin-top: 20px;
+   
 }
 
 .results-container{
@@ -26,6 +27,14 @@
     font-size: 30px;
     margin-top: 10px;
    
+   
+}
+
+#values-p{
+
+    height: 35px;
+    /* background-color: #ff0000; */
+
 }
 
 #results{
@@ -62,8 +71,22 @@
     
 }
 
+.btns:active{
+
+    transform: scale(.90);
+    transition: scale .3s;
+
+}
+
 .btns-click{
-    scale: .90;
+    scale: 1;
+}
+
+.btns-click:hover{
+
+    cursor: pointer;
+    scale: 1.0;
+
 }
 
 .btns:hover{
