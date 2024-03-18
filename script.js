@@ -50,11 +50,20 @@ button.addEventListener("click", function() {
        switch (button.id) {
         case "eql":
 
-            resultText.innerText = opt(operation)
+            if (value != null && value2 != 0) {
+                resultText.innerText = opt(operation)
+            } else if(value2 == 0){
 
+                resultText.innerText = value2
+
+            }
+        
             break;
        
         default:
+
+
+        if (value != null) {
 
             value2 = parseInt(value)
             value = null
@@ -63,6 +72,7 @@ button.addEventListener("click", function() {
             valueText.innerText += getSigns(operation)
 
             console.log(getSigns(operation));
+        }
 
             break;
        }
