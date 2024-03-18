@@ -115,3 +115,14 @@
 
     border-radius: 2.5rem;
 }
+
+@media screen and (max-width: 422px) {
+
+    .container{
+        border-radius: 0px;
+        margin-top: 0px;
+        height: 100%;
+       
+    }
+
+}
