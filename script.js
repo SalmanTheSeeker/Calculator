@@ -24,11 +24,11 @@ button.addEventListener("click", function() {
         switch (button.id) {
             case "ac":
 
-             result = 0
-             value = null
-             valueText.innerText = ""
-             resultText.innerText = "0"
-             operation = "";
+                result = 0
+                value = null
+                valueText.innerText = ""
+                resultText.innerText = "0"
+                operation = "";
                 
             break;
 
@@ -39,15 +39,15 @@ button.addEventListener("click", function() {
 
             case "prce":
 
-             
-           break;
+                
+            break;
         }
 
     }else if(classes.contains("btns-orange")){
 
         console.log('orange');
 
-       switch (button.id) {
+        switch (button.id) {
         case "eql":
 
             if (value != null && value2 != 0) {
@@ -59,7 +59,7 @@ button.addEventListener("click", function() {
             }
         
             break;
-       
+
         default:
 
 
