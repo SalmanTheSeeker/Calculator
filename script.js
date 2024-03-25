@@ -10,11 +10,15 @@ button.addEventListener("click", function() {
 
     let classes = button.classList
 
-    if(button.id == "cl"){
+    if(button.id == "prce"){
 
-        // valueText.innerText =  valueText.innerText.toString().slice(0, -1)
+        // will handel the % button
 
-        resultText.innerText = eval("10-5")
+    } else if(button.id == "cl"){
+
+        valueText.innerText =  valueText.innerText.toString().slice(0, -1)
+
+        //resultText.innerText = eval("10-5")
 
     } else if(button.id == "ac"){
 
