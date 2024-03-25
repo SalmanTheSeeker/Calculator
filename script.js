@@ -1,148 +1,55 @@
 const buttons = document.querySelectorAll(".btns");
 let resultText = document.getElementById("results-p");
 let valueText = document.getElementById("values-p");
+let opt = false;
 
-let result = 0
-let value = null
-let value2 = 0
 
-let operation = ""
-
-buttons.forEach(function(button) {
-
+buttons.forEach(function(button)
+{
 button.addEventListener("click", function() {
 
-    let classes = button.classList;
+    let classes = button.classList
 
-    // console.log(button.id);
+    if(button.id == "cl"){
+
+        // valueText.innerText =  valueText.innerText.toString().slice(0, -1)
+
+        resultText.innerText = eval("10-5")
+
+    } else if(button.id == "ac"){
+
+        valueText.innerText = ""
+        resultText.innerText = "0"
+        opt = false
+
+    }else if(button.id == "eql"){
 
 
-    if(classes.contains("btns-white")){
+        console.log(valueText.innerText.indexOf("%"));
+        resultText.innerText = eval(valueText.innerText.replace("×", "*").replace("÷", "/"))
+        valueText.innerText = ""
+        return
 
-        console.log('white');
+    }else if(opt && classes.contains("btns-orange")){
 
-        switch (button.id) {
-            case "ac":
+        valueText.innerText += button.value
+        opt = false
 
-                result = 0
-                value = null
-                valueText.innerText = ""
-                resultText.innerText = "0"
-                operation = "";
-                
-            break;
-
-            case "cl":
-
-            
-            break;
-
-            case "prce":
-
-                
-            break;
-        }
-
-    }else if(classes.contains("btns-orange")){
-
-        console.log('orange');
-
-        switch (button.id) {
-        case "eql":
-
-            if (value != null && value2 != 0) {
-                resultText.innerText = opt(operation)
-            } else if(value2 == 0){
-
-                resultText.innerText = value2
-
-            }
+    }else if(!opt && classes.contains("btns-orange")){
         
-            break;
-
-        default:
-
-
-        if (value != null) {
-
-            value2 = parseInt(value)
-            value = null
-            operation = button.id
-
-            valueText.innerText += getSigns(operation)
-
-            console.log(getSigns(operation));
-        }
-
-            break;
-       }
+        valueText.innerText =  valueText.innerText.toString().slice(0, -1)
+        valueText.innerText += button.value
+        opt = false
 
     }else{
 
-        console.log('black')
-
-        if(value == null){
-
-            value = button.innerText
-
-        }else{
-
-            value += button.innerText
-        }
-         
-         valueText.innerText += button.id
-
+        valueText.innerText += button.value
+        opt = true
 
     }
 
-  });
 });
 
-
-function opt(opt){
-
-    value = parseInt(value)
-    switch (opt) {
-        case "dvi":
-            return value2 / value
-        break;
-
-        case "mlti":
-            return value2 * value
-        break;
-
-        case "min":
-            return value2 - value
-        break;
-
-        case "pls":
-            return value2 + value
-        break;    
-        
-    }
-
-}
-
-function getSigns(opt){
-    switch (opt) {
-        case "dvi":
-            return "÷"
-        break;
-
-        case "mlti":
-            return "x"
-        break;
-
-        case "min":
-            return "-"
-        break;
-
-        case "pls":
-            return "+"
-        break;    
-        
-    }
-
-}
+});
 
 

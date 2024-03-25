@@ -67,6 +67,7 @@
     border-radius:50%; 
     /* border: 5px solid black; */
     /* box-shadow: 1px 1px 8px #ffffff; */
+    border: none;
     box-shadow: inset;
     
 }
@@ -114,6 +115,7 @@
 .btn-0{
 
     border-radius: 2.5rem;
+    width: 100%;
 }
 
 @media screen and (max-width: 422px) {
